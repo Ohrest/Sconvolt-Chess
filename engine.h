@@ -9,13 +9,9 @@ int evaluate(int pboard[9][8])
 {
     int score;
     score = 0;
-
     //srand (time(NULL));
-
     //int v1 = rand() % 2;
-
     count_board_combinations++;
-
     /*
             int test = check_if_game_finished(pboard);
             if (test!= -99)
@@ -30,7 +26,6 @@ int evaluate(int pboard[9][8])
             return score;
             }
 */
-
     //else
 
     /*
@@ -50,7 +45,6 @@ int evaluate(int pboard[9][8])
         for (int j = 0; j <= 7; j++)
             if (pboard[i][j] != 0)
             {
-
                 //Add points for whites
                 if (pboard[i][j] == 1)
                     score = score + 100; //Pawn equals 100
@@ -156,9 +150,7 @@ int Sconvolt::AlphaBetaMax(int alpha, int beta, int depth, bool sid)
     {
         //Make move
         temp = bb[legalmoves[k].tox][legalmoves[k].toy];
-
         bb[legalmoves[k].tox][legalmoves[k].toy] = bb[legalmoves[k].startx][legalmoves[k].starty];
-
         bb[legalmoves[k].startx][legalmoves[k].starty] = 0;
 
         /*
@@ -174,20 +166,15 @@ int Sconvolt::AlphaBetaMax(int alpha, int beta, int depth, bool sid)
 
         if (val >= beta) //if score >= beta then return beta
         {
-
             return beta; //beta cut off
         }
 
         if (val > alpha) //if score >= beta then return beta
         {
-
             alpha = val;
-
             if (depth == user_depth /*&& sid==true*/)
             {
-
                 cout << "New best board score for ALPHA: " << alpha << ", Move : " << j1 << ", " << j2 << " -> " << j3 << ", " << j4 << ", Depth: " << depth << endl;
-
                 j1 = legalmoves[k].startx;
                 j2 = legalmoves[k].starty;
                 j3 = legalmoves[k].tox;
@@ -195,7 +182,6 @@ int Sconvolt::AlphaBetaMax(int alpha, int beta, int depth, bool sid)
             }
         }
     }
-
     return alpha;
 }
 
@@ -206,7 +192,6 @@ int Sconvolt::AlphaBetaMin(int alpha, int beta, int depth, bool sid)
 {
     int val = 0;
     int temp = 0;
-
     if (depth <= 0)
     {
         return (evaluate(bb));
@@ -238,54 +223,40 @@ int Sconvolt::AlphaBetaMin(int alpha, int beta, int depth, bool sid)
     //For Each Move
     for (int k = 0; k < legalmoves.size(); k++)
     {
-
         //bb[legalmoves[k].tox][legalmoves[k].toy] = [legalmoves[k].startx][legalmoves[k].starty];
 
         temp = bb[legalmoves[k].tox][legalmoves[k].toy];
-
         bb[legalmoves[k].tox][legalmoves[k].toy] = bb[legalmoves[k].startx][legalmoves[k].starty];
-
         bb[legalmoves[k].startx][legalmoves[k].starty] = 0;
-
         /*
                         if (sid==true) sid = false;
               else sid = true;
                 */
 
         val = AlphaBetaMax(alpha, beta, depth - 1, sid);
-
         //UnmakeMove();
-
         bb[legalmoves[k].startx][legalmoves[k].starty] = bb[legalmoves[k].tox][legalmoves[k].toy];
         bb[legalmoves[k].tox][legalmoves[k].toy] = temp;
 
         if (val <= alpha) //if score <= alpha then return alpha
         {
-
             return alpha;
         }
 
         if (val < beta) //if score < beta then beta mbecomes the new score
         {
-
             beta = val;
-
             if (depth == user_depth /*&& sid==false*/)
             {
-
                 //if (depth == user_depth){
-
                 cout << "New best board score for BETA: " << beta << ", Move : " << j1 << ", " << j2 << " -> " << j3 << ", " << j4 << ", Depth: " << depth << endl;
-
                 j1 = legalmoves[k].startx;
                 j2 = legalmoves[k].starty;
                 j3 = legalmoves[k].tox;
                 j4 = legalmoves[k].toy;
-
                 //}
             }
         }
     }
-
     return beta;
 }

@@ -1,14 +1,13 @@
 # Sconvolt Chess
-Version 0.99.8, by Orest Sota (Last modified: 1/03/2015 )
+By Orest Sota (Last modified: 1/03/2015 )
 
 A simple cross-platform chess engine + GUI I built in C++ as a hobby. It includes editor mode and switching between difficulty levels.
 
 ## Run the program
 
-- On WINDOWS, Just click on executable named Sconvolt.exe. In some windows 
-versions you may be required to run as administrator, in that case right-click on the file "Sconvolt.exe" and click "run as administrator.
+- On Windows, Click on executable named Sconvolt.exe. In some windows versions you may be required to run as administrator, in that case right-click on the file "Sconvolt.exe" and click "run as administrator.
 
-- On LINUX, you need to run "startSconvoltLinux", so change the permissions of the files "Sconvolt" and "startSconvoltLinux" (from terminal, type "chmod u+x Sconvolt", "chmod u+x startSconvoltLinux") then start the program by typing ./startSconvoltLinux (it's a script that executes the file "Sconvolt" by automatically linking the required libraries).
+- On Linux, you need to run "startSconvoltLinux", so change the permissions of the files "Sconvolt" and "startSconvoltLinux" (from terminal, type "chmod u+x Sconvolt", "chmod u+x startSconvoltLinux") then start the program by typing ./startSconvoltLinux (it's a script that executes the file "Sconvolt" by automatically linking the required libraries).
 
 How to play: Click and keep the mouse pressed to move pieces in the board. Click on "Editor" to switch to editor mode where you can define your own board state before playing.
  
@@ -20,7 +19,7 @@ To compile this program from source code, you will need to install Allegro 5 lib
 
 
 ### Compile from Linux
-  // First compile Allegro 5 from source code
+First compile Allegro 5 from source code
 ```
   git clone https://github.com/liballeg/allegro5
   cd allegro5

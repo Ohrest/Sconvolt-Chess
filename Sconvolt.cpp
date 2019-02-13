@@ -57,7 +57,6 @@ int main()
 
     //al_init_font_addon(); // initialize the font addon
     //al_init_ttf_addon();// initialize the ttf (True Type Font) addon
-
     //al_set_new_display_flags(ALLEGRO_RESIZABLE);
 
     Screen = al_create_display(display_x, display_y);
@@ -131,20 +130,13 @@ int main()
     //This is the loop of the game, Exit is a bool variable
     while (Exit == false)
     {
-
         //al_clear_to_color(al_map_rgb(0,0,0)); //Clear screen
-
         al_clear_to_color(al_map_rgb(40, 40, 40)); //Clear screen
-
         al_draw_text(font, al_map_rgb(255, 255, 255), board_size_x + 15, 15, NULL, "Sconvolt Chess 0.99.8");
-
         //al_draw_text(font2, al_map_rgb(255,255,255), board_size_x + 15, 400, NULL , to_string(evaluate (game1.bb)).c_str() );
         //cout<<"Board Evaluation: " << evaluate (game1.bb)<< endl;
-
         al_draw_scaled_bitmap(chessboard, 0, 0, al_get_bitmap_width(chessboard), al_get_bitmap_height(chessboard), 0, 0, board_size_x, board_size_y, 0);
-
         al_draw_tinted_bitmap(reset, color, 907, 537, NULL);
-
         al_draw_tinted_bitmap(exit, color, 907, 480, NULL);
 
         if (mode == 0)
@@ -260,9 +252,6 @@ int main()
                 al_draw_scaled_bitmap(piece_on_hold, 0, 0, al_get_bitmap_width(piece_on_hold), al_get_bitmap_height(piece_on_hold), Event.mouse.x - 30, Event.mouse.y - 30, 60, 60, 0);
         }
 
-        //-------------------------------------------------------------------------
-        //-------------------------------------------------------------------------
-
         //This draws the contents of game1.bb on the screen, that's the board pieces
         for (int f1 = 0; f1 <= 7; f1++)
         {
@@ -297,9 +286,7 @@ int main()
 
         if (al_is_event_queue_empty(event_queue))
         {
-
             //if (mode==0) game1.check_if_game_finished();
-
             //Display last move
             int tes1, tes2, tes3, tes4;
             tes1 = (game1.j2) * (board_size_x / 8) + 15;
@@ -312,7 +299,6 @@ int main()
             //If mouse button is down, highlight the possible moves of the selected pawn
             if (mouse_button_is_down)
             {
-                //-----------------------------------------------------------------------------------
                 int tx;
                 tx = (mouse_from_x / (board_size_x / 8));
                 int ty;
@@ -322,7 +308,6 @@ int main()
                 {
                     vector<movement> t2;
                     t2.clear();
-
                     returnMoves(t2, tx, ty, game1.bb, game1.user_side);
                     //cout<< t1.size();
 
@@ -357,8 +342,6 @@ int main()
                     //if (thinking) al_draw_text(font, al_map_rgb(255,255,255), 600, 200, 0 , "I am thinking");
                 }
             }
-            //------------------------------------------------------------------------------------
-
             al_flip_display();
         }
 
@@ -366,18 +349,14 @@ int main()
 
         if (Event.type == ALLEGRO_EVENT_MOUSE_BUTTON_UP)
         {
-
             mouse_button_is_down = false;
-
             //If mouse button is released, save its x/y coordinates
             mouse_to_x = Event.mouse.x;
             mouse_to_y = Event.mouse.y;
 
             //cout<<"Mouse_x = "<<Event.mouse.x<<endl;
             //cout<<"Mouse_y = "<<Event.mouse.y<<endl;
-
             //cout<<"Relevant position x: "<< (mouse_to_y/(board_size_y/8)) <<endl;
-
             //cout<<"Relevant position y: " << (mouse_to_x/(board_size_x/8)) << endl;
 
             //Convert mouse's x/y coordinates into board array coordinates (0-7)(0-7)
@@ -405,9 +384,7 @@ int main()
 
             if (mode == 0)
             {
-
                 //cout<<"_____________________________" <<endl;
-
                 if (game1.gamestarted == false && game1.human_vs_human == true)
                 {
                     game1.user_side = game1.whostartsfirst;
@@ -416,7 +393,6 @@ int main()
 
                 if (game1.whostartsfirst != game1.user_side && game1.gamestarted == false && game1.human_vs_human == false)
                 {
-
                     if (game1.user_side == 1)
                         game1.generateMove(game1.user_depth, false);
                     else if (game1.user_side == 0)
@@ -444,10 +420,7 @@ int main()
                 Screen,
                 "King is on check",
                 "King is on check",
-
                 "",
-
-
                 NULL,
                 ALLEGRO_MESSAGEBOX_OK_CANCEL
                 );
