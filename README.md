@@ -1,6 +1,8 @@
 # Sconvolt Chess
 By Orest Sota (Last modified: 1/03/2015 )
 
+![Loading screenshot](Images/screenshot.jpeg?raw=true "Screenshot")
+
 A simple cross-platform chess engine + GUI I built in C++ as a hobby. It includes editor mode and switching between difficulty levels.
 
 ## Run the program
