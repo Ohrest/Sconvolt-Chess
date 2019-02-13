@@ -1,35 +1,19 @@
- ____                            _ _      ____ _                   
-/ ___|  ___ ___  _ ____   _____ | | |_   / ___| |__   ___  ___ ___ 
-\___ \ / __/ _ \| '_ \ \ / / _ \| | __| | |   | '_ \ / _ \/ __/ __|
- ___) | (_| (_) | | | \ V / (_) | | |_  | |___| | | |  __/\__ \__ \
-|____/ \___\___/|_| |_|\_/ \___/|_|\__|  \____|_| |_|\___||___/___/
-
-
-                                                                      
-                                                                      
 Sconvolt Chess, Version 0.99.8, by Orest Sota (Last modified: 1/03/2015 )
 
 A simple cross-platform chess engine + GUI I built in C++ as a hobby. It includes editor mode and switching between difficulty levels.
 
 HOW TO RUN THE PROGRAM - (If you don't want to compile it by yourself but you just want to play)
-//------------------------------------------------------------------------------------------------------
 
   - On WINDOWS, Just click on executable named Sconvolt.exe. In some windows 
 versions you may be required to run as administrator, in that case right-click on the file "Sconvolt.exe" and click "run as administrator.
 
-  - On LINUX, you need to run "startSconvoltLinux", so change the permissions of the files "Sconvolt" and "startSconvoltLinux" (from terminal,  
-type "chmod u+x Sconvolt", "chmod u+x startSconvoltLinux") then start the program by typing ./startSconvoltLinux (it's a script that executes the file "Sconvolt" by automatically 
-linking the required libraries).
+  - On LINUX, you need to run "startSconvoltLinux", so change the permissions of the files "Sconvolt" and "startSconvoltLinux" (from terminal, type "chmod u+x Sconvolt", "chmod u+x startSconvoltLinux") then start the program by typing ./startSconvoltLinux (it's a script that executes the file "Sconvolt" by automatically linking the required libraries).
 
 
 How to play: Click and keep the mouse pressed to move pieces in the board. Click on "Editor" to switch to editor mode where you can define your own board state before playing.
  
 
-
-
-
 HOW TO COMPILE THE PROGRAM FROM SOURCE CODE
-//----------------------------------------------------------------------------------------------------------
 
 The same main file (Sconvolt.cpp) can be compiled for Linux and Windows, (On a Mac too).
 To compile this program from source code, you will need to install Allegro 5 libraries.
